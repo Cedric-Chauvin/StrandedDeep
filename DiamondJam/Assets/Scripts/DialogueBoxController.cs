@@ -9,7 +9,7 @@ public class DialogueBoxController : MonoBehaviour
     #region Singleton
     private static DialogueBoxController instance;
 
-    public DialogueBoxController Instance { get => instance; }
+    public static DialogueBoxController Instance { get => instance; }
     #endregion
 
     [SerializeField]

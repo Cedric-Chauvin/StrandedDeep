@@ -39,18 +39,20 @@ public abstract class InteractableObject : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (isInteractable && other.tag == "Player" && Input.GetKey(KeyCode.E))
+        if (isInteractable && other.tag == "Player")
         {
-            if (duration >= inputDuration)
-                Activate();
-            else
-                duration += Time.deltaTime;
-            fill.fillAmount = duration;
-        }
-        else if (duration != 0)
-        {
-            duration = 0;
-            fill.fillAmount = duration;
+            if (Input.GetKey(KeyCode.E))
+            {
+                if (duration >= inputDuration)
+                    Activate();
+                else
+                    duration += Time.deltaTime;
+                fill.fillAmount = duration;
+            }else if (duration != 0)
+            {
+                duration = 0;
+                fill.fillAmount = duration;
+            }
         }
 
         Debug.Log("trigger");
@@ -62,6 +64,8 @@ public abstract class InteractableObject : MonoBehaviour
         {
             fill.gameObject.SetActive(false);
             playerInZone = false;
+            duration = 0;
+            fill.fillAmount = duration;
         }
     }
 
