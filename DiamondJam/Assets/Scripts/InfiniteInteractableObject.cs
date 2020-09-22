@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class InfiniteInteractableObject : InteractableObject
 {
-
     [SerializeField]
-    private float duration;
+    protected List<Event> events = new List<Event>();
+    [SerializeField]
+    protected float duration;
 
     private Animation myAnimation;
 
@@ -17,6 +18,11 @@ public class InfiniteInteractableObject : InteractableObject
         Invoke("SetInteractable", duration);
         if (OnInteract != null)
             OnInteract.Invoke();
+
+        foreach (var item in events)   
+        {  
+            item.LaunchEvent();
+        }
     }
 
     void Awake()
@@ -24,7 +30,7 @@ public class InfiniteInteractableObject : InteractableObject
         myAnimation = GetComponent<Animation>();
     }
 
-    private void SetInteractable()
+    protected void SetInteractable()
     {
         IsInteractable = true;
     }

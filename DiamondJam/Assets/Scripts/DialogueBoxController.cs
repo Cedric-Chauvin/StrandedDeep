@@ -19,6 +19,9 @@ public class DialogueBoxController : MonoBehaviour
     [SerializeField]
     private float timeBetweenCaracter;
 
+    private Coroutine coroutine;
+    private string textToDisplay;
+
     void Awake()
     {
         if (instance != null)
@@ -30,31 +33,43 @@ public class DialogueBoxController : MonoBehaviour
             instance = this;
     }
 
-
-    public void SingleDialogue(string text, float duration)
+    private void Update()
     {
-        boxBackground.gameObject.SetActive(true);
-        displayedText.text = "";
-
-        if (text.Length * timeBetweenCaracter > duration)
-            duration = text.Length * timeBetweenCaracter;
-        StartCoroutine(TextApparition(text, duration));
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (coroutine != null)
+            {
+                StopCoroutine(coroutine);
+                coroutine = null;
+                displayedText.text = textToDisplay;
+            }
+            else if (boxBackground.gameObject.activeSelf == true)
+                boxBackground.gameObject.SetActive(false);
+        }
     }
 
 
-    private IEnumerator TextApparition(string text, float duration)
+    public void SingleDialogue(string text)
     {
-        float time = 0;
+        boxBackground.gameObject.SetActive(true);
+        displayedText.text = "";
+        textToDisplay = text;
+
+        coroutine = StartCoroutine(TextApparition(text));
+    }
+
+
+    private IEnumerator TextApparition(string text)
+    {
         int index = 0;
-        while (time <= duration)
+        while (displayedText.text.Length < text.Length)
         {
             if(index < text.Length)
                 displayedText.text += text[index];
             index++;
-            time += timeBetweenCaracter;
             yield return new WaitForSeconds(timeBetweenCaracter);
         }
 
-        boxBackground.gameObject.SetActive(false);
+        coroutine = null;
     }
 }
