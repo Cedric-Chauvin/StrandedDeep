@@ -18,5 +18,10 @@ public class TriggerEvent : Event
     public override void LaunchEvent()
     {
         zone.canTrigger = true;
+        zone.OnTrigger = () =>
+        {
+            EventSequencer.Instance.NextEvent();
+            zone.OnTrigger = null;
+        };
     }
 }

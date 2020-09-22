@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public abstract class InteractableObject : MonoBehaviour
 {
+    [SerializeField]
     private bool isInteractable = true;
 
     public bool IsInteractable
