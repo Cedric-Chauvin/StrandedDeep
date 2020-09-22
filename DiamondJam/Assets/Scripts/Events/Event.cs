@@ -11,6 +11,7 @@ public abstract class Event : MonoBehaviour
         TEXT,
         BLANK,
         STARTTIMED,
+        INTERACTION
     }
     protected EventType type;
     public float duration;

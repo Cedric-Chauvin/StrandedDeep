@@ -30,7 +30,7 @@ public abstract class InteractableObject : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && isInteractable)
         {
             fill.gameObject.SetActive(true);
             playerInZone = true;

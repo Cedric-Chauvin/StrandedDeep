@@ -12,7 +12,7 @@ public class TriggerEvent : Event
 
     public override string BuildGameObjectName()
     {
-        return "TriggerZone(" + zone.gameObject.name + "s)";
+        return "TriggerZone(" + zone.gameObject.name + ")";
     }
 
     public override void LaunchEvent()
