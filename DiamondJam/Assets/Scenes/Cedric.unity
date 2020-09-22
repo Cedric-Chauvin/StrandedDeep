@@ -136,8 +136,10 @@ GameObject:
   - component: {fileID: 149712241}
   - component: {fileID: 149712240}
   - component: {fileID: 149712239}
-  - component: {fileID: 149712238}
   - component: {fileID: 149712244}
+  - component: {fileID: 149712246}
+  - component: {fileID: 149712245}
+  - component: {fileID: 149712238}
   m_Layer: 0
   m_Name: Dialogue Box
   m_TagString: Untagged
@@ -154,12 +156,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 149712237}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0bfda0184adfd74e80e06f15d9ff174, type: 3}
+  m_Script: {fileID: 11500000, guid: 1afbf901ecd65574f89471b296d765fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isInteractable: 1
   inputDuration: 1
-  events: []
+  events:
+  - {fileID: 149712244}
+  - {fileID: 149712246}
+  - {fileID: 149712245}
   duration: 2
 --- !u!111 &149712239
 Animation:
@@ -268,6 +273,36 @@ MonoBehaviour:
   duration: 0
   timeControl: 0
   text: hello my friend comme te llama
+--- !u!114 &149712245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149712237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea7ba01ce12c673468e4c766d59c15fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0
+  timeControl: 0
+  text: 'BOn ok '
+--- !u!114 &149712246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149712237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea7ba01ce12c673468e4c766d59c15fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0
+  timeControl: 0
+  text: allllllllllo ?
 --- !u!1 &167352466
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,8 +313,9 @@ GameObject:
   m_Component:
   - component: {fileID: 167352467}
   - component: {fileID: 167352468}
+  - component: {fileID: 167352469}
   m_Layer: 0
-  m_Name: S1
+  m_Name: Sound (brokenbulb)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -313,8 +349,104 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duration: 0
   timeControl: 0
-  source: {fileID: 2077985277}
+  source: {fileID: 167352469}
   audioClip: {fileID: 0}
+--- !u!82 &167352469
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167352466}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 36251afcc47405f4fa536229377f6d52, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &226918426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -946,11 +1078,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf49ce4586d3b5d4b93561d03af2c5cb, type: 3}
---- !u!82 &2077985277 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 2714849460197372564, guid: cf49ce4586d3b5d4b93561d03af2c5cb, type: 3}
-  m_PrefabInstance: {fileID: 2077985276}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2635518588135937900
 PrefabInstance:
   m_ObjectHideFlags: 0

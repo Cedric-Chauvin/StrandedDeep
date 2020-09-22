@@ -13,6 +13,8 @@ public class InfiniteInteractableObject : InteractableObject
 
     protected override void Activate()
     {
+        if (IsInvoking())
+            { IsInteractable = false; return; }
         myAnimation.Play();
         IsInteractable = false;
         Invoke("SetInteractable", duration);

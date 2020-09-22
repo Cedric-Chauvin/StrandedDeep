@@ -20,8 +20,8 @@ public class TriggerEvent : Event
         zone.canTrigger = true;
         zone.OnTrigger = () =>
         {
-            EventSequencer.Instance.NextEvent();
             zone.OnTrigger = null;
+            EventSequencer.Instance.NextEvent();
         };
     }
 }

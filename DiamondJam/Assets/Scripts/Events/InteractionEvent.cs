@@ -20,8 +20,8 @@ public class InteractionEvent : Event
         interactableObject.IsInteractable = true;
         interactableObject.OnInteract = () => 
         {
-            EventSequencer.Instance.NextEvent();
             interactableObject.OnInteract = null;
+            EventSequencer.Instance.NextEvent();
         };
     }
 }
