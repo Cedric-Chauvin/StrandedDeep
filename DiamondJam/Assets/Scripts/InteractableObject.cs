@@ -12,16 +12,14 @@ public abstract class InteractableObject : MonoBehaviour
         get => isInteractable;
         set
         {
-            fill.fillAmount = 0;
-            fill.gameObject.SetActive(value && playerInZone);
+            UIManager.Instance.InteractionFill.fillAmount = 0;
+            UIManager.Instance.InteractionFill.gameObject.SetActive(value && playerInZone);
             isInteractable = value;
         }
     }
 
     [SerializeField]
     private float inputDuration;
-    [SerializeField]
-    private Image fill;
 
     private float duration;
     private bool playerInZone;
@@ -32,7 +30,7 @@ public abstract class InteractableObject : MonoBehaviour
     {
         if (other.tag == "Player" && isInteractable)
         {
-            fill.gameObject.SetActive(true);
+            UIManager.Instance.InteractionFill.gameObject.SetActive(true);
             playerInZone = true;
         }
     }
@@ -47,11 +45,11 @@ public abstract class InteractableObject : MonoBehaviour
                     Activate();
                 else
                     duration += Time.deltaTime;
-                fill.fillAmount = duration;
+                UIManager.Instance.InteractionFill.fillAmount = duration;
             }else if (duration != 0)
             {
                 duration = 0;
-                fill.fillAmount = duration;
+                UIManager.Instance.InteractionFill.fillAmount = duration;
             }
         }
 
@@ -62,10 +60,10 @@ public abstract class InteractableObject : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            fill.gameObject.SetActive(false);
+            UIManager.Instance.InteractionFill.gameObject.SetActive(false);
             playerInZone = false;
             duration = 0;
-            fill.fillAmount = duration;
+            UIManager.Instance.InteractionFill.fillAmount = duration;
         }
     }
 

@@ -22,5 +22,6 @@ public class StartTimedEvent : Event
     private void Start()
     {
         type = EventType.STARTTIMED;
+        timeControl = false;
     }
 }
