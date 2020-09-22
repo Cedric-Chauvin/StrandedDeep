@@ -52,7 +52,7 @@ public class TimerController : MonoBehaviour
         {
             if(timer >= events[0].time)
             {
-                events[0].evenement.Invoke();
+                events[0].evenement.LaunchEvent();
                 events.RemoveAt(0);
             }
             timer += Time.deltaTime;
@@ -64,14 +64,8 @@ public class TimerController : MonoBehaviour
     [Serializable]
     public class TimedEvent
     {
-        public TimedEvent(float time, Action action)
-        {
-            this.time = time;
-            evenement = action;
-        }
-
         public float time;
-        public Action evenement;
+        public Event evenement;
     }
 
     private int Comparison(TimedEvent x, TimedEvent y)

@@ -9,7 +9,8 @@ public abstract class Event : MonoBehaviour
         SOUND,
         TRIGGERZONE,
         TEXT,
-        BLANK
+        BLANK,
+        STARTTIMED,
     }
     protected EventType type;
     public float duration;
