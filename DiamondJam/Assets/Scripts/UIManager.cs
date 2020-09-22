@@ -14,11 +14,10 @@ public class UIManager : MonoBehaviour
 
     [SerializeField]
     private Image interactionFill;
-    public Image InteractionFill { get; private set; }
+    public Image InteractionFill { get => interactionFill; private set => interactionFill = value; }
 
     [SerializeField]
     private Image fade;
-    public Image Fade { get; private set; }
     [SerializeField]
     private float fadeDuration;
 

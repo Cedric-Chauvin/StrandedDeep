@@ -15,6 +15,8 @@ public class InfiniteInteractableObject : InteractableObject
         myAnimation.Play();
         IsInteractable = false;
         Invoke("SetInteractable", duration);
+        if (OnInteract != null)
+            OnInteract.Invoke();
     }
 
     void Awake()

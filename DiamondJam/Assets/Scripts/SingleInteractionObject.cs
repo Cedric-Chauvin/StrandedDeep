@@ -11,6 +11,7 @@ public class SingleInteractionObject : InteractableObject
     protected override void Activate()
     {
         IsInteractable = false;
-        EventSequencer.Instance.NextEvent();
+        if (OnInteract != null)
+            OnInteract.Invoke();
     }
 }

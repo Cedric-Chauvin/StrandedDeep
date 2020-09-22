@@ -18,5 +18,10 @@ public class InteractionEvent : Event
     public override void LaunchEvent()
     {
         interactableObject.IsInteractable = true;
+        interactableObject.OnInteract = () => 
+        {
+            EventSequencer.Instance.NextEvent();
+            interactableObject.OnInteract = null;
+        };
     }
 }
