@@ -7,10 +7,6 @@ public class SingleInteractionObject : InteractableObject
     [SerializeField]
     private List<Event> events = new List<Event>();
 
-    private void Start()
-    {
-        IsInteractable = false;
-    }
     protected override void Activate()
     {
         IsInteractable = false;

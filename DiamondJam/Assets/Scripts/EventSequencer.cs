@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Assets.Script;
 
 public class EventSequencer : MonoBehaviour
 {
@@ -22,8 +23,8 @@ public class EventSequencer : MonoBehaviour
     }
     #endregion
 
-    private Event[] _events;
-    public Event[] events
+    private List<Event> _events;
+    public List<Event> events
     {
         get { return _events; }
         set { _events = value; }
@@ -35,7 +36,7 @@ public class EventSequencer : MonoBehaviour
 
     void Start()
     {
-        _events = GetComponentsInChildren<Event>();
+        _events =HierarchyUtils.GetComponentsInDirectChildren<Event>(transform,false);
         _eventId = 0;
         _activeEvent = _events[_eventId];
         StartEvent();
@@ -64,7 +65,7 @@ public class EventSequencer : MonoBehaviour
     public void NextEvent()
     {
         _eventTimer = 0;
-        if(_eventId < _events.Length - 1)
+        if(_eventId < _events.Count - 1)
         {
             _eventId++;
             StartEvent();

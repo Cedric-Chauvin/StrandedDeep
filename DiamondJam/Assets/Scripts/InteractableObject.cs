@@ -49,7 +49,7 @@ public abstract class InteractableObject : MonoBehaviour
                     Activate();
                 else
                     duration += Time.deltaTime;
-                UIManager.Instance.InteractionFill.fillAmount = duration;
+                UIManager.Instance.InteractionFill.fillAmount = duration/inputDuration;
             }else if (duration != 0)
             {
                 duration = 0;
