@@ -15,4 +15,9 @@ public class EndTimer : Event
     {
         TimerController.Instance.StopCoroutineInProcess(name);
     }
+
+    private void Start()
+    {
+        timeControl = true;
+    }
 }
