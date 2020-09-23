@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float gravity = -9.81f;
     public bool isCrouched = false;
     public KeyCode CrouchKey;
+    public bool canMove = false;
 
     Vector3 fall;
 
@@ -29,8 +30,11 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-        Move();
-        Actions();
+        if (canMove)
+        {
+            Move();
+            Actions();
+        }
     }
 
     public void Move()

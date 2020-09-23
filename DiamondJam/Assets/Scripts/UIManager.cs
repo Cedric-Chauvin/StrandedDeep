@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -35,18 +36,18 @@ public class UIManager : MonoBehaviour
             instance = this;
     }
 
-    public void FadeChange(bool active)
+    public void FadeChange(bool active, bool loadNextLevel)
     {
         if (fadeIsActive == active)
             return;
 
         if (fadeRoutine != null)
             StopCoroutine(fadeRoutine);
-        StartCoroutine(FadeUpdate(active));
+        StartCoroutine(FadeUpdate(active, loadNextLevel));
         fadeIsActive = active;
     }
 
-    private IEnumerator FadeUpdate(bool active)
+    private IEnumerator FadeUpdate(bool active, bool loadNextLevel)
     {
         float _timer;
         if (active)
@@ -66,6 +67,8 @@ public class UIManager : MonoBehaviour
         }
 
         fadeRoutine = null;
+        if (loadNextLevel)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
 }

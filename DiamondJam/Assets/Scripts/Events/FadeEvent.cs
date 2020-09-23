@@ -7,6 +7,8 @@ public class FadeEvent : Event
     [Header("Fade Parameter")]
     [SerializeField]
     private bool activeFade;
+    [SerializeField]
+    private bool loadNextLevel;
     private void Start()
     {
         timeControl = false;
@@ -21,6 +23,6 @@ public class FadeEvent : Event
 
     public override void LaunchEvent()
     {    
-        UIManager.Instance.FadeChange(activeFade);
+        UIManager.Instance.FadeChange(activeFade, loadNextLevel);
     }
 }
