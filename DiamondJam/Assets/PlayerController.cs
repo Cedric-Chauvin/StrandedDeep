@@ -12,10 +12,20 @@ public class PlayerController : MonoBehaviour
 
     Vector3 fall;
 
+    [Header ("Foot Steps")]
+    public float minPitch;
+    public float maxPitch;
+    public float minVolume;
+    public float maxVolume;
+    public float timeBetweenSteps;
+    float timerSteps;
+    AudioSource stepsSource;
+
     private CharacterController controller;
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
+        stepsSource = GetComponentInChildren<AudioSource>();
     }
     void Update()
     {
@@ -29,6 +39,19 @@ public class PlayerController : MonoBehaviour
         float z = Input.GetAxisRaw("Vertical");
         
         Vector3 dir = (transform.right * x + transform.forward * z).normalized;
+        if(dir != Vector3.zero)
+        {
+            timerSteps -= Time.deltaTime;
+            if(timerSteps <= 0)
+            {
+                timerSteps = timeBetweenSteps;
+                PlayStepSound();
+            }
+        }
+        else
+        {
+            timerSteps = timeBetweenSteps;
+        }
         controller.Move(dir * speed * Time.deltaTime);
         fall.y += gravity * Time.deltaTime;
         if (GroundCheck() && fall.y < 0)
@@ -49,7 +72,7 @@ public class PlayerController : MonoBehaviour
                 isCrouched = true;
             }
         }
-        if (!Input.GetKey(CrouchKey) && isCrouched && StandCheck())
+        if (!Input.GetKey(CrouchKey) && StandCheck())
         {
             controller.height = 2.0f;
             controller.center = new Vector3(0f, 0f, 0f);
@@ -60,6 +83,15 @@ public class PlayerController : MonoBehaviour
                 isCrouched = false;
             }
         }
+    }
+
+    public void PlayStepSound()
+    {
+        float p = Random.Range(minPitch, maxPitch);
+        float v = Random.Range(minVolume, maxVolume);
+        stepsSource.pitch = p;
+        stepsSource.volume = v;
+        stepsSource.Play();
     }
 
     public bool StandCheck()
