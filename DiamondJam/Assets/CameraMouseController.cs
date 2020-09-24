@@ -13,13 +13,15 @@ public class CameraMouseController : MonoBehaviour
     }
     private void Start()
     {
+        Application.targetFrameRate = 60;
+        QualitySettings.vSyncCount = 0;
         _player = transform.parent;
         Cursor.lockState = CursorLockMode.Locked;
     }
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
+        float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.unscaledDeltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.unscaledDeltaTime;
 
         _xRotation -= mouseY;
         _xRotation = Mathf.Clamp(_xRotation, -90f, 90f);
@@ -29,4 +31,10 @@ public class CameraMouseController : MonoBehaviour
         Vector3 pRotation = Vector3.up * mouseX;
         _player.Rotate(Vector3.up * mouseX);
     }
+
+    private void OnGUI()
+    {
+        GUILayout.Label("DEltatime : " + Time.unscaledDeltaTime);
+    }
+
 }
