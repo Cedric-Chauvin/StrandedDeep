@@ -310,7 +310,7 @@ MonoBehaviour:
   CrouchKey: 99
   canMove: 0
   timeBetweenSteps: 0.4
-  footStepsClips:
+  metalStepsClips:
   - {fileID: 8300000, guid: b1a419af253b8164184581af3b0e68c5, type: 3}
   - {fileID: 8300000, guid: 7b5e6f01377771f449e9a7209e4ebddc, type: 3}
   - {fileID: 8300000, guid: 2b5dcda507eee2d4b91c06842ec2ac21, type: 3}
@@ -319,6 +319,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 097c922205aced94d82c54173325f603, type: 3}
   - {fileID: 8300000, guid: 0d3ed42366142d84ebc9bfedcda72f3d, type: 3}
   - {fileID: 8300000, guid: fffa6e7109a208749a84da5f08dda409, type: 3}
+  woodStepsClips:
+  - {fileID: 8300000, guid: 070cac8a839e91040bed7d32b5168c9d, type: 3}
+  - {fileID: 8300000, guid: 3e3200929ea3ed74ab25a46b49d57ffc, type: 3}
+  - {fileID: 8300000, guid: fa9eb8e3fff7da34b911fe4bf586c520, type: 3}
+  - {fileID: 8300000, guid: a3e7706e3e2d35b49b7b9981d5726f74, type: 3}
+  activeStepsClips: []
+  stepId: 0
 --- !u!143 &8232174510885011781
 CharacterController:
   m_ObjectHideFlags: 0
