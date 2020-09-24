@@ -21,6 +21,7 @@ public class SlowEvent : Event
         playerSpeed = player.speed;
         cameraSpeed = cam.sensitivity;
         playerStepsSpeed = player.timeBetweenSteps;
+        timeControl = true;
     }
     public override string BuildGameObjectName()
     {
