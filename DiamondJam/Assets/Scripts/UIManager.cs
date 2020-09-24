@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private float fadeDuration;
 
-    private bool fadeIsActive;
+    public bool fadeIsActive;
     private Coroutine fadeRoutine;
 
     void Awake()
