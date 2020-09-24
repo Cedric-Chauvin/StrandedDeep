@@ -1545,6 +1545,10 @@ PrefabInstance:
       propertyPath: events.Array.data[0]
       value: 
       objectReference: {fileID: 422314679}
+    - target: {fileID: 3817854876418570896, guid: 813a20e3955120947baf6add579edc7c, type: 3}
+      propertyPath: inputDuration
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7196537262190712185, guid: 813a20e3955120947baf6add579edc7c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5
@@ -3072,6 +3076,10 @@ PrefabInstance:
       propertyPath: events.Array.data[0]
       value: 
       objectReference: {fileID: 422314679}
+    - target: {fileID: 3817854876418570896, guid: 813a20e3955120947baf6add579edc7c, type: 3}
+      propertyPath: inputDuration
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7196537262190712185, guid: 813a20e3955120947baf6add579edc7c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5
@@ -3595,6 +3603,10 @@ PrefabInstance:
       propertyPath: events.Array.data[0]
       value: 
       objectReference: {fileID: 422314679}
+    - target: {fileID: 3817854876418570896, guid: 813a20e3955120947baf6add579edc7c, type: 3}
+      propertyPath: inputDuration
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7196537262190712185, guid: 813a20e3955120947baf6add579edc7c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5
@@ -9277,6 +9289,10 @@ PrefabInstance:
       propertyPath: events.Array.data[0]
       value: 
       objectReference: {fileID: 422314679}
+    - target: {fileID: 3817854876418570896, guid: 813a20e3955120947baf6add579edc7c, type: 3}
+      propertyPath: inputDuration
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7196537262190712185, guid: 813a20e3955120947baf6add579edc7c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5
@@ -10977,6 +10993,10 @@ PrefabInstance:
       propertyPath: events.Array.data[0]
       value: 
       objectReference: {fileID: 422314679}
+    - target: {fileID: 3817854876418570896, guid: 813a20e3955120947baf6add579edc7c, type: 3}
+      propertyPath: inputDuration
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7196537262190712185, guid: 813a20e3955120947baf6add579edc7c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5
@@ -12288,6 +12308,10 @@ PrefabInstance:
       propertyPath: events.Array.data[0]
       value: 
       objectReference: {fileID: 422314679}
+    - target: {fileID: 3817854876418570896, guid: 813a20e3955120947baf6add579edc7c, type: 3}
+      propertyPath: inputDuration
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7196537262190712185, guid: 813a20e3955120947baf6add579edc7c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5
