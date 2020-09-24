@@ -78,7 +78,7 @@ public class UIManager : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
 
             fade.color = new Color(0, 0, 0, _timer / fadeDuration);
-            master.SetFloat("Master", Mathf.Lerp(masterVolume, 0, _timer / fadeDuration));
+            master.SetFloat("Master", Mathf.Lerp(masterVolume, -80, _timer / fadeDuration));
         }
 
         fadeRoutine = null;

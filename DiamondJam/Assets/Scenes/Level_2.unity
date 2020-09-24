@@ -977,13 +977,13 @@ MonoBehaviour:
   timeControl: 1
   text: 'Voice 1: No guardian ! No guardian !
 
-    Voice 2: Remember ! Remember
-    your plan !
+    Voice 2: Remember ! Remember your
+    plan !
 
     Voice 1: Blow them up ! The button !
 
-    Voice 2: Find it
-    ! Now !'
+    Voice 2: Find it ! Now
+    !'
   extraTime: 2
 --- !u!1001 &32606532
 PrefabInstance:
@@ -11608,7 +11608,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 451863816}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.1652946, y: 1, z: 24.200026}
@@ -15257,7 +15257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8232174510885011782, guid: cf49ce4586d3b5d4b93561d03af2c5cb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.15
+      value: 14.44
       objectReference: {fileID: 0}
     - target: {fileID: 8232174510885011782, guid: cf49ce4586d3b5d4b93561d03af2c5cb, type: 3}
       propertyPath: m_LocalRotation.x
@@ -21219,7 +21219,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 765558650}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.1652946, y: 1, z: 4.029588}
@@ -22953,7 +22953,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 839407641}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.1652946, y: 1, z: 1.8846006}
@@ -26459,6 +26459,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 654896771}
     m_Modifications:
+    - target: {fileID: 345004349255626103, guid: 3bd896ae56c999c448e8552d099ddd9c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 345004349255626103, guid: 3bd896ae56c999c448e8552d099ddd9c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.96469545
+      objectReference: {fileID: 0}
+    - target: {fileID: 345004349255626103, guid: 3bd896ae56c999c448e8552d099ddd9c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.263368
+      objectReference: {fileID: 0}
+    - target: {fileID: 345004349255626103, guid: 3bd896ae56c999c448e8552d099ddd9c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -149.46
+      objectReference: {fileID: 0}
     - target: {fileID: 5844164407152080751, guid: 3bd896ae56c999c448e8552d099ddd9c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2
@@ -34931,7 +34947,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1279152614}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1.5
@@ -51051,7 +51067,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1917881981}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.1652946, y: 1, z: 8.248838}
@@ -53765,6 +53781,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 654896771}
     m_Modifications:
+    - target: {fileID: 3818247115159008856, guid: 3bd896ae56c999c448e8552d099ddd9c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5844164407152080751, guid: 3bd896ae56c999c448e8552d099ddd9c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
