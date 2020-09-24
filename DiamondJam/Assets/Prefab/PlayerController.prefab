@@ -186,7 +186,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 40
+  field of view: 80
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -309,10 +309,10 @@ MonoBehaviour:
   isCrouched: 0
   CrouchKey: 99
   canMove: 0
-  minPitch: 0.25
-  maxPitch: 0.5
-  minVolume: 0.1
-  maxVolume: 1
+  minPitch: 0.85
+  maxPitch: 1
+  minVolume: 0.25
+  maxVolume: 0.5
   timeBetweenSteps: 0.5
 --- !u!143 &8232174510885011781
 CharacterController:
