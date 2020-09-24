@@ -61,7 +61,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: CrazyState1
-  m_Speed: 1
+  m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 3345587854778671102}
@@ -175,7 +175,7 @@ AnimatorStateMachine:
     m_Position: {x: 450, y: -80, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1936278798209367691}
-    m_Position: {x: 218.52094, y: -70.29959, z: 0}
+    m_Position: {x: 210, y: -80, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []

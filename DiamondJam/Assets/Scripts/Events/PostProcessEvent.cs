@@ -6,10 +6,13 @@ public class PostProcessEvent : Event
 {
     public PostProccessManager.STATE state;
     public float time;
-
+    private void Start()
+    {
+        timeControl = true;
+    }
     public override string BuildGameObjectName()
     {
-        return "PostProcess Set " + state.ToString() + time + "second"; 
+        return "State (" + state.ToString() + time + " s)"; 
     }
 
     public override void LaunchEvent()
