@@ -40,8 +40,8 @@ AudioSource:
   m_GameObject: {fileID: 7080849904422559975}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 456e613bf4aaa3a42a6beaf6a64efb91, type: 3}
+  OutputAudioMixerGroup: {fileID: 7456298843504187059, guid: bde64ff37e8c1dd419548cfb0f610930, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 931bb892efa5c144a83fa6fa1c08729c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -308,6 +308,7 @@ MonoBehaviour:
   gravity: -9.81
   isCrouched: 0
   CrouchKey: 99
+  canMove: 0
   minPitch: 0.25
   maxPitch: 0.5
   minVolume: 0.1
