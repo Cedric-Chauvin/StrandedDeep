@@ -46,6 +46,7 @@ MonoBehaviour:
   duration: 0
   timeControl: 0
   text: It's been so long since I've seen the sky. I can't even remember its color.
+  extraTime: 0
 --- !u!1 &8135839885644696156
 GameObject:
   m_ObjectHideFlags: 0
