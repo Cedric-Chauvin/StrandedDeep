@@ -11,7 +11,7 @@ public class FadeEvent : Event
     private bool loadNextLevel;
     private void Start()
     {
-        timeControl = false;
+        timeControl = true;
     }
     public override string BuildGameObjectName()
     {

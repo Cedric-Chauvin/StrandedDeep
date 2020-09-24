@@ -15,6 +15,7 @@ public abstract class InteractableObject : MonoBehaviour
         set
         {
             UIManager.Instance.InteractionFill.fillAmount = 0;
+            UIManager.Instance.interactionImage.gameObject.SetActive(value && playerInZone);
             UIManager.Instance.InteractionFill.gameObject.SetActive(value && playerInZone);
             isInteractable = value;
         }
@@ -34,7 +35,7 @@ public abstract class InteractableObject : MonoBehaviour
     {
         if (other.tag == "Player" && isInteractable)
         {
-            UIManager.Instance.InteractionFill.gameObject.SetActive(true);
+            UIManager.Instance.interactionImage.gameObject.SetActive(true);
             playerInZone = true;
         }
     }
@@ -64,7 +65,7 @@ public abstract class InteractableObject : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            UIManager.Instance.InteractionFill.gameObject.SetActive(false);
+            UIManager.Instance.interactionImage.gameObject.SetActive(false);
             playerInZone = false;
             duration = 0;
             UIManager.Instance.InteractionFill.fillAmount = duration;

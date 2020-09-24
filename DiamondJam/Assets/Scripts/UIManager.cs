@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -17,13 +18,17 @@ public class UIManager : MonoBehaviour
     private Image interactionFill;
     public Image InteractionFill { get => interactionFill; private set => interactionFill = value; }
 
+    public Image interactionImage;
+
     [SerializeField]
     private Image fade;
     [SerializeField]
     private float fadeDuration;
 
     public bool fadeIsActive;
+    public AudioMixer master;
     private Coroutine fadeRoutine;
+    private float masterVolume;
 
     void Awake()
     {
@@ -34,6 +39,15 @@ public class UIManager : MonoBehaviour
         }
         else
             instance = this;
+        master.GetFloat("Master", out masterVolume);
+    }
+
+    private void Start()
+    {
+        if(fadeIsActive)
+            master.SetFloat("Master", masterVolume);
+        else
+            master.SetFloat("Master", 0);
     }
 
     public void FadeChange(bool active, bool loadNextLevel)
@@ -64,6 +78,7 @@ public class UIManager : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
 
             fade.color = new Color(0, 0, 0, _timer / fadeDuration);
+            master.SetFloat("Master", Mathf.Lerp(masterVolume, 0, _timer / fadeDuration));
         }
 
         fadeRoutine = null;
