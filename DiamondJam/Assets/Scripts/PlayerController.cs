@@ -15,15 +15,18 @@ public class PlayerController : MonoBehaviour
 
     [Header ("Foot Steps")]
     public float timeBetweenSteps;
-    public AudioClip[] footStepsClips;
+    public AudioClip[] metalStepsClips;
+    public AudioClip[] woodStepsClips;
+    public AudioClip[] activeStepsClips;
     float timerSteps;
     AudioSource stepsSource;
-    int stepId = 0;
+    public int stepId = 0;
     private CharacterController controller;
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
         stepsSource = GetComponentInChildren<AudioSource>();
+        activeStepsClips = metalStepsClips;
     }
     void Update()
     {
@@ -90,13 +93,13 @@ public class PlayerController : MonoBehaviour
     public void PlayStepSound()
     {
         stepsSource.Stop();
-        stepsSource.clip = footStepsClips[stepId];
+        stepsSource.clip = activeStepsClips[stepId];
         stepsSource.Play();
-        if (stepId != footStepsClips.Length - 1)
+        if (stepId != activeStepsClips.Length - 1)
         {
             stepId++;
         }
-        else if(stepId == footStepsClips.Length - 1)
+        else if(stepId == activeStepsClips.Length - 1)
         {
             stepId = 0;
         }
@@ -125,4 +128,6 @@ public class PlayerController : MonoBehaviour
         else
             return false;
     }
+
+    
 }
