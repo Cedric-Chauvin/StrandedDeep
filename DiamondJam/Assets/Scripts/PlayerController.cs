@@ -14,14 +14,11 @@ public class PlayerController : MonoBehaviour
     Vector3 fall;
 
     [Header ("Foot Steps")]
-    public float minPitch;
-    public float maxPitch;
-    public float minVolume;
-    public float maxVolume;
     public float timeBetweenSteps;
+    public AudioClip[] footStepsClips;
     float timerSteps;
     AudioSource stepsSource;
-
+    int stepId = 0;
     private CharacterController controller;
     private void Awake()
     {
@@ -55,6 +52,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             timerSteps = timeBetweenSteps;
+            stepId = 0;
         }
         controller.Move(dir * speed * Time.deltaTime);
         fall.y += gravity * Time.deltaTime;
@@ -91,11 +89,18 @@ public class PlayerController : MonoBehaviour
 
     public void PlayStepSound()
     {
-        float p = Random.Range(minPitch, maxPitch);
-        float v = Random.Range(minVolume, maxVolume);
-        stepsSource.pitch = p;
-        stepsSource.volume = v;
+        stepsSource.Stop();
+        stepsSource.clip = footStepsClips[stepId];
         stepsSource.Play();
+        if (stepId != footStepsClips.Length - 1)
+        {
+            stepId++;
+        }
+        else if(stepId == footStepsClips.Length - 1)
+        {
+            stepId = 0;
+        }
+        
     }
 
     public bool StandCheck()

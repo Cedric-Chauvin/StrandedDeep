@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PostProccessManager : MonoBehaviour
 {
+    private static PostProccessManager _instance = null;
+    public static PostProccessManager Instance
+    {
+        get { return _instance; }
+    }
     private Animator anim;
     public enum STATE
     {
@@ -20,6 +25,14 @@ public class PostProccessManager : MonoBehaviour
     public float timer = 0.0f;
     private void Awake()
     {
+        if (_instance != null)
+        {
+            Destroy(this);
+            return;
+        }
+        else
+            _instance = this;
+
         anim = GetComponent<Animator>();
     }
 

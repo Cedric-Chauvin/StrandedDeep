@@ -31,10 +31,4 @@ public class CameraMouseController : MonoBehaviour
         Vector3 pRotation = Vector3.up * mouseX;
         _player.Rotate(Vector3.up * mouseX);
     }
-
-    private void OnGUI()
-    {
-        GUILayout.Label("DEltatime : " + Time.unscaledDeltaTime);
-    }
-
 }

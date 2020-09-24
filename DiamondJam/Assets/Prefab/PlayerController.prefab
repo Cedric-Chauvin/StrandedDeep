@@ -309,11 +309,16 @@ MonoBehaviour:
   isCrouched: 0
   CrouchKey: 99
   canMove: 0
-  minPitch: 0.85
-  maxPitch: 1
-  minVolume: 0.25
-  maxVolume: 0.5
-  timeBetweenSteps: 0.5
+  timeBetweenSteps: 0.4
+  footStepsClips:
+  - {fileID: 8300000, guid: b1a419af253b8164184581af3b0e68c5, type: 3}
+  - {fileID: 8300000, guid: 7b5e6f01377771f449e9a7209e4ebddc, type: 3}
+  - {fileID: 8300000, guid: 2b5dcda507eee2d4b91c06842ec2ac21, type: 3}
+  - {fileID: 8300000, guid: d68a4f69d9292be46adeb5e9ec4cad4f, type: 3}
+  - {fileID: 8300000, guid: 6edf5d9597bf4154b8e47e4984be1d83, type: 3}
+  - {fileID: 8300000, guid: 097c922205aced94d82c54173325f603, type: 3}
+  - {fileID: 8300000, guid: 0d3ed42366142d84ebc9bfedcda72f3d, type: 3}
+  - {fileID: 8300000, guid: fffa6e7109a208749a84da5f08dda409, type: 3}
 --- !u!143 &8232174510885011781
 CharacterController:
   m_ObjectHideFlags: 0
