@@ -21,6 +21,7 @@ public class DialogueBoxController : MonoBehaviour
 
     private Coroutine coroutine;
     private string textToDisplay;
+    private bool CanPasse;
 
     void Awake()
     {
@@ -35,7 +36,7 @@ public class DialogueBoxController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && CanPasse)
         {
             if (coroutine != null)
             {
@@ -49,17 +50,18 @@ public class DialogueBoxController : MonoBehaviour
     }
 
 
-    public void SingleDialogue(string text)
+    public void SingleDialogue(string text, float extraTime)
     {
         boxBackground.gameObject.SetActive(true);
         displayedText.text = "";
         textToDisplay = text;
 
-        coroutine = StartCoroutine(TextApparition(text));
+        CanPasse = false;
+        coroutine = StartCoroutine(TextApparition(text, extraTime));
     }
 
 
-    private IEnumerator TextApparition(string text)
+    private IEnumerator TextApparition(string text, float extraTime)
     {
         int index = 0;
         while (displayedText.text.Length < text.Length)
@@ -68,8 +70,16 @@ public class DialogueBoxController : MonoBehaviour
                 displayedText.text += text[index];
             index++;
             yield return new WaitForSeconds(timeBetweenCaracter);
+            CanPasse = true;
+        }
+        float time = 0;
+        while (time < extraTime)
+        {
+            yield return new WaitForSeconds(0.1f);
+            time += 0.1f;
         }
 
+        boxBackground.gameObject.SetActive(false);
         coroutine = null;
     }
 }

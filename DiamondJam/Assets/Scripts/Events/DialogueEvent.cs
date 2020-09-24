@@ -5,7 +5,8 @@ using UnityEngine;
 public class DialogueEvent : Event
 {
     [SerializeField][TextArea]
-    private string text; 
+    private string text;
+    public  float extraTime;
 
     public override string BuildGameObjectName()
     {
@@ -14,6 +15,6 @@ public class DialogueEvent : Event
 
     public override void LaunchEvent()
     {
-        DialogueBoxController.Instance.SingleDialogue(text.ToString());
+        DialogueBoxController.Instance.SingleDialogue(text,extraTime);
     }
 }
