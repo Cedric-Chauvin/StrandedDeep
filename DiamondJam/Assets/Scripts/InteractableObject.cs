@@ -68,7 +68,13 @@ public abstract class InteractableObject : MonoBehaviour
             playerInZone = false;
             duration = 0;
             UIManager.Instance.InteractionFill.fillAmount = duration;
+            OnPlayerExit();
         }
     }
+
+    protected virtual void OnPlayerExit()
+    {
+
+    } 
 
 }

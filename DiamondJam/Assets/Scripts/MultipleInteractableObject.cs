@@ -11,6 +11,7 @@ public class MultipleInteractableObject : InfiniteInteractableObject
     {
         events[0].LaunchEvent();
         audioSources[0].Play();
+        DialogueBoxController.Instance.currentAudio = audioSources[0];
         if (events.Count > 1)
         {
             events.RemoveAt(0);
@@ -18,5 +19,11 @@ public class MultipleInteractableObject : InfiniteInteractableObject
         }
         IsInteractable = false;
         Invoke("SetInteractable", duration);
+    }
+
+    protected override void OnPlayerExit()
+    {
+        audioSources.ForEach(x => x.Stop());
+        DialogueBoxController.Instance.KillBox();
     }
 }

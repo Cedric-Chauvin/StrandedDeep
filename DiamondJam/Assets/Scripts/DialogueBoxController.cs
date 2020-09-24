@@ -21,7 +21,9 @@ public class DialogueBoxController : MonoBehaviour
 
     private Coroutine coroutine;
     private string textToDisplay;
-    private bool CanPasse;
+    private bool canPasse;
+    private bool apparitionSkip;
+    public AudioSource currentAudio;
 
     void Awake()
     {
@@ -36,21 +38,28 @@ public class DialogueBoxController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && CanPasse)
+        if (Input.GetKeyDown(KeyCode.E) && canPasse)
         {
             if (coroutine != null)
             {
                 StopCoroutine(coroutine);
                 coroutine = null;
                 displayedText.text = textToDisplay;
+                apparitionSkip = true;
             }
             else if (boxBackground.gameObject.activeSelf == true)
-            {
-                boxBackground.gameObject.SetActive(false);
-                StopCoroutine(coroutine);
-                coroutine = null;
-            }
+                KillBox();
         }
+    }
+
+    public void KillBox()
+    {
+        boxBackground.gameObject.SetActive(false);
+        currentAudio.Stop();
+        if(coroutine != null)
+            StopCoroutine(coroutine);
+        coroutine = null;
+        currentAudio = null;
     }
 
 
@@ -62,7 +71,8 @@ public class DialogueBoxController : MonoBehaviour
         if (coroutine != null)
             StopCoroutine(coroutine);
 
-        CanPasse = false;
+        canPasse = false;
+        apparitionSkip = false;
         coroutine = StartCoroutine(TextApparition(text, extraTime));
     }
 
@@ -70,13 +80,13 @@ public class DialogueBoxController : MonoBehaviour
     private IEnumerator TextApparition(string text, float extraTime)
     {
         int index = 0;
-        while (displayedText.text.Length < text.Length)
+        while (displayedText.text.Length < text.Length && !apparitionSkip)
         {
             if(index < text.Length)
                 displayedText.text += text[index];
             index++;
             yield return new WaitForSeconds(timeBetweenCaracter);
-            CanPasse = true;
+            canPasse = true;
         }
         float time = 0;
         while (time < extraTime)
@@ -85,7 +95,7 @@ public class DialogueBoxController : MonoBehaviour
             time += 0.1f;
         }
 
-        boxBackground.gameObject.SetActive(false);
         coroutine = null;
+        KillBox();
     }
 }
