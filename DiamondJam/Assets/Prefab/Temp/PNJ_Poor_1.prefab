@@ -46,7 +46,7 @@ MonoBehaviour:
   duration: 0
   timeControl: 0
   text: It's been so long since I've seen the sky. I can't even remember its color.
-  extraTime: 0
+  extraTime: 2
 --- !u!1 &8135839885644696156
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,9 +72,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8135839885644696156}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.0000029504295}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 6, y: 0.17, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_Children:
   - {fileID: 8135839884669664781}
   - {fileID: 8135839885966321564}

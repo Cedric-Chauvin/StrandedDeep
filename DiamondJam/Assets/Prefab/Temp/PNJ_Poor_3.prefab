@@ -45,8 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duration: 0
   timeControl: 0
-  text: I cannot work anymore, it hurts so much. If only I could take a break.
-  extraTime: 0
+  text: I want to die, I want this to stop. I need to get out of here.
+  extraTime: 2
 --- !u!1 &8702090006086591996
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,7 +199,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8702090006413797749}
-  m_LocalRotation: {x: -0, y: -0.86602443, z: -0, w: 0.5000018}
+  m_LocalRotation: {x: 0, y: -0.86602545, z: 0, w: 0.49999994}
   m_LocalPosition: {x: 1.04, y: 0, z: -7.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
