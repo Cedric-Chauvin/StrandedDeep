@@ -55,7 +55,8 @@ public class DialogueBoxController : MonoBehaviour
     public void KillBox()
     {
         boxBackground.gameObject.SetActive(false);
-        currentAudio.Stop();
+        if(currentAudio!=null)
+            currentAudio.Stop();
         if(coroutine != null)
             StopCoroutine(coroutine);
         coroutine = null;

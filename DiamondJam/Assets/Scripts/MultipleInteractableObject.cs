@@ -23,7 +23,6 @@ public class MultipleInteractableObject : InfiniteInteractableObject
 
     protected override void OnPlayerExit()
     {
-        audioSources.ForEach(x => x.Stop());
         DialogueBoxController.Instance.KillBox();
     }
 }
