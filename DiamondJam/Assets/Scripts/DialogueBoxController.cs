@@ -45,7 +45,11 @@ public class DialogueBoxController : MonoBehaviour
                 displayedText.text = textToDisplay;
             }
             else if (boxBackground.gameObject.activeSelf == true)
+            {
                 boxBackground.gameObject.SetActive(false);
+                StopCoroutine(coroutine);
+                coroutine = null;
+            }
         }
     }
 
@@ -55,6 +59,8 @@ public class DialogueBoxController : MonoBehaviour
         boxBackground.gameObject.SetActive(true);
         displayedText.text = "";
         textToDisplay = text;
+        if (coroutine != null)
+            StopCoroutine(coroutine);
 
         CanPasse = false;
         coroutine = StartCoroutine(TextApparition(text, extraTime));
