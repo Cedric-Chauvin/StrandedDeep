@@ -108,7 +108,7 @@ public class PlayerController : MonoBehaviour
 
     public bool StandCheck()
     {
-        int layerMask = 1 << 8;
+        int layerMask = 1 << 9;
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.transform.position, Vector3.up, out hit, 0.75f, layerMask))
         {
