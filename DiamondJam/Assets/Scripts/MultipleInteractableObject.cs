@@ -12,6 +12,8 @@ public class MultipleInteractableObject : InfiniteInteractableObject
         events[0].LaunchEvent();
         audioSources[0].Play();
         DialogueBoxController.Instance.currentAudio = audioSources[0];
+        if (OnInteract != null)
+            OnInteract.Invoke();
         if (events.Count > 1)
         {
             events.RemoveAt(0);

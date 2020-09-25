@@ -17,4 +17,9 @@ public class SetActiveEvent : Event
         gameObject.SetActive(active);
     }
 
+    private void Start()
+    {
+        timeControl = true;
+    }
+
 }

@@ -42,8 +42,6 @@ public class DialogueBoxController : MonoBehaviour
         {
             if (coroutine != null)
             {
-                StopCoroutine(coroutine);
-                coroutine = null;
                 displayedText.text = textToDisplay;
                 apparitionSkip = true;
             }
