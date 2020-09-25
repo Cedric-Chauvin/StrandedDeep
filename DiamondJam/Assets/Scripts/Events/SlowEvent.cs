@@ -30,18 +30,20 @@ public class SlowEvent : Event
 
     public override void LaunchEvent()
     {
-        player.speed -= movementSlowAmount;
+        if (player.speed - movementSlowAmount > 0)
+            player.speed -= movementSlowAmount;
         player.timeBetweenSteps = 1;
-        cam.sensitivity -= cameraSlowAmount;
+        if (cam.sensitivity - cameraSlowAmount > 0)
+            cam.sensitivity -= cameraSlowAmount;
         isLaunched = true;
     }
 
     private void Update()
     {
-        if(isLaunched && !isEnded)
+        if (isLaunched && !isEnded)
         {
             slowDuration -= Time.deltaTime;
-            if(slowDuration <= 0)
+            if (slowDuration <= 0)
             {
                 isEnded = true;
                 player.speed = playerSpeed;
