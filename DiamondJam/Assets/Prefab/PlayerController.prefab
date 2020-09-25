@@ -308,6 +308,7 @@ MonoBehaviour:
   gravity: -9.81
   isCrouched: 0
   CrouchKey: 99
+  CrouchKey2: 306
   canMove: 0
   timeBetweenSteps: 0.4
   metalStepsClips:

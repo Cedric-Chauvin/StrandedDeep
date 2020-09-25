@@ -78,7 +78,7 @@ public class UIManager : MonoBehaviour
                 _timer += 0.1f;
             else
                 _timer -= 0.1f;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.05f);
 
             fade.color = new Color(0, 0, 0, _timer / fadeDuration);
             if(fadeSound)

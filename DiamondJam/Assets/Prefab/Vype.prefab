@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isInteractable: 1
-  inputDuration: 0.5
+  inputDuration: 0
   events:
   - {fileID: 7041145283378325908}
   - {fileID: 7041145282190843000}
