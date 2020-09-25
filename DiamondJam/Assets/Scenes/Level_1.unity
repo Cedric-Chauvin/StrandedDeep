@@ -6462,7 +6462,7 @@ MonoBehaviour:
   duration: 0
   timeControl: 0
   activeFade: 1
-  loadNextLevel: 0
+  loadNextLevel: 1
   fadeSound: 1
 --- !u!1001 &283134475
 PrefabInstance:
@@ -17578,14 +17578,14 @@ Transform:
   - {fileID: 561094974}
   - {fileID: 561115208}
   - {fileID: 273800697}
-  - {fileID: 978191643}
   - {fileID: 1056986442}
   - {fileID: 1709234485}
   - {fileID: 59713523}
-  - {fileID: 1041518434}
+  - {fileID: 978191643}
   - {fileID: 548872415}
   - {fileID: 775357924}
   - {fileID: 742788547}
+  - {fileID: 1041518434}
   - {fileID: 14009249}
   - {fileID: 1750628069}
   - {fileID: 1296888932}
