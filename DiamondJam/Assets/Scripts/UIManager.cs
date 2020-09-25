@@ -50,18 +50,20 @@ public class UIManager : MonoBehaviour
             master.SetFloat("Master", 0);
     }
 
-    public void FadeChange(bool active, bool loadNextLevel)
+    public void FadeChange(bool active, bool loadNextLevel,bool fadeSound)
     {
-        if (fadeIsActive == active)
+        if (fadeIsActive == active && loadNextLevel)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        else if(fadeIsActive == active)
             return;
 
         if (fadeRoutine != null)
             StopCoroutine(fadeRoutine);
-        StartCoroutine(FadeUpdate(active, loadNextLevel));
+        StartCoroutine(FadeUpdate(active, loadNextLevel,fadeSound));
         fadeIsActive = active;
     }
 
-    private IEnumerator FadeUpdate(bool active, bool loadNextLevel)
+    private IEnumerator FadeUpdate(bool active, bool loadNextLevel,bool fadeSound)
     {
         float _timer;
         if (active)
@@ -78,7 +80,8 @@ public class UIManager : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
 
             fade.color = new Color(0, 0, 0, _timer / fadeDuration);
-            master.SetFloat("Master", Mathf.Lerp(masterVolume, -80, _timer / fadeDuration));
+            if(fadeSound)
+                master.SetFloat("Master", Mathf.Lerp(masterVolume, -80, _timer / fadeDuration));
         }
 
         fadeRoutine = null;
