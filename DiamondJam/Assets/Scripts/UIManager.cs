@@ -28,7 +28,7 @@ public class UIManager : MonoBehaviour
     public bool fadeIsActive;
     public AudioMixer master;
     private Coroutine fadeRoutine;
-    private float masterVolume;
+    private static float masterVolume = float.NaN;
 
     void Awake()
     {
@@ -39,7 +39,8 @@ public class UIManager : MonoBehaviour
         }
         else
             instance = this;
-        master.GetFloat("Master", out masterVolume);
+        if(float.IsNaN(masterVolume))
+            master.GetFloat("Master", out masterVolume);
     }
 
     private void Start()
@@ -53,8 +54,8 @@ public class UIManager : MonoBehaviour
     public void FadeChange(bool active, bool loadNextLevel,bool fadeSound)
     {
         if (fadeIsActive == active && loadNextLevel)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        else if(fadeIsActive == active)
+            { SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); return; }
+        else if (fadeIsActive == active)
             return;
 
         if (fadeRoutine != null)
